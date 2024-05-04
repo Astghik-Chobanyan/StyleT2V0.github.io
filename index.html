@@ -113,7 +113,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="teaser" autoplay muted loop playsinline height="100%" src="./static/images/teaser_img.jpg" style="width:100%;height:800px;">
+      <img id="teaser" autoplay muted loop playsinline height="100%" src="./static/images/teaser.png" style="width:100%;height:512px;">
       <p class="subtitle has-text-centered">
         Our method <span class="dnerf">StyleT2V0</span>, leverages both textual prompts and style images to generate videos with coherent styles. This approach ensures that each video remains consistent with the visual style of the reference image, enhancing thematic fidelity alongside narrative alignment.
       </p>
@@ -148,9 +148,10 @@
     <section class="hero method">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <img id="method" autoplay muted loop playsinline height="100%" src="./static/images/method.png" style="width:100%;height:100%;">
           <p>
+            In StyleT2V0, we extend the Text2Video-Zero framework by embedding a novel shared attention mechanism tailored for style consistency. This innovation enables the generation of video sequences that are not only contextually aligned with textual prompts but also exhibit a uniform style, matching a reference image. By altering the conventional attention computation within the network, StyleT2V0 integrates style features from a designated reference image, effectively synchronizing the visual style across all frames. This approach ensures that each frame of the video not only responds accurately to the text input but also consistently reflects the aesthetic qualities of the reference style.
           </p>
+          <img id="method" autoplay muted loop playsinline height="100%" src="./static/images/method.png" style="width:100%;height:100%;">
         </div>
       </div>
     </section>
@@ -169,7 +170,9 @@
     <table class="center">
       <tr><td></td><td></td><td></td><td></td></tr>
       <tr>
-        <td><img src="./static/images/styles/saryan.jpg" raw=true></td>
+        <td style="vertical-align: middle; text-align: center;">
+          <img src="./static/images/styles/saryan.jpg" raw=true>
+        </td>
         <td><img src="./static/images/martiros_saryan/1.gif"></td>
         <td><img src="./static/images/martiros_saryan/13.gif"></td>
         <td><img src="./static/images/martiros_saryan/19.gif"></td>
@@ -182,7 +185,9 @@
       </tr>
       <tr><td></td><td></td><td></td><td></td></tr>
       <tr>
-        <td><img src="./static/images/styles/minas.jpg" raw=true></td>
+        <td style="vertical-align: middle; text-align: center;">
+          <img src="./static/images/styles/minas.jpg" raw=true>
+        </td>
         <td><img src="./static/images/minas_avetisyan/3.gif"></td>
         <td><img src="./static/images/minas_avetisyan/12.gif"></td>
         <td><img src="./static/images/minas_avetisyan/18.gif"></td>
@@ -195,7 +200,9 @@
       </tr>
       <tr><td></td><td></td><td></td><td></td></tr>
       <tr>
-        <td><img src="./static/images/styles/vangog_style.png" raw=true></td>
+        <td style="vertical-align: middle; text-align: center;">
+          <img src="./static/images/styles/vangog_style.png" raw=true>
+        </td>
         <td><img src="./static/images/van_gogh/0.gif"></td>
         <td><img src="./static/images/van_gogh/5.gif"></td>
         <td><img src="./static/images/van_gogh/17.gif"></td>
@@ -208,7 +215,9 @@
       </tr>
       <tr><td></td><td></td><td></td><td></td></tr>
       <tr>
-        <td><img src="./static/images/styles/watercolor.png"  raw=true></td>
+        <td style="vertical-align: middle; text-align: center;">
+          <img src="./static/images/styles/watercolor.png"  raw=true>
+        </td>
         <td><img src="./static/images/watercolor/6.gif"></td>
         <td><img src="./static/images/watercolor/9.gif"></td>
         <td><img src="./static/images/watercolor/10.gif"></td>
@@ -264,8 +273,6 @@
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
         </div>
