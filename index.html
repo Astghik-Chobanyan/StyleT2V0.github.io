@@ -113,9 +113,9 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img id="teaser" autoplay muted loop playsinline height="100%" src="./static/images/teaser.png" style="width:100%;height:512px;">
+      <img id="teaser" autoplay muted loop playsinline height="100%" src="./static/images/teaser.jpg" style="width:100%;height:550px;">
       <p class="subtitle has-text-centered">
-        Our method <span class="dnerf">StyleT2V0</span>, leverages both textual prompts and style images to generate videos with coherent styles. This approach ensures that each video remains consistent with the visual style of the reference image, enhancing thematic fidelity alongside narrative alignment.
+        Our method <span class="dnerf">StyleT2V0</span>,advances video generation capabilities by utilizing: (i) a textual prompt combined with a style image to capture the ensure stylistic and contextual accuracy across frames (see rows 1, 4), (ii) pose control to ensure dynamic accuracy, (iii) edge control for enhanced visual definition, and (iv) depth control to enrich spatial perception. The showcased frames illustrate the method’s robust ability to adaptively integrate enhanced controls while consistently reflecting the artistic intent and textual specifications.
       </p>
     </div>
   </div>
@@ -151,7 +151,10 @@
           <p>
             In StyleT2V0, we extend the Text2Video-Zero framework by embedding a novel shared attention mechanism tailored for style consistency. This innovation enables the generation of video sequences that are not only contextually aligned with textual prompts but also exhibit a uniform style, matching a reference image. By altering the conventional attention computation within the network, StyleT2V0 integrates style features from a designated reference image, effectively synchronizing the visual style across all frames. This approach ensures that each frame of the video not only responds accurately to the text input but also consistently reflects the aesthetic qualities of the reference style.
           </p>
-          <img id="method" autoplay muted loop playsinline height="100%" src="./static/images/method.png" style="width:100%;height:100%;">
+          <img id="method" autoplay muted loop playsinline height="100%" src="./static/images/main-diagram.jpg" style="width:100%;height:100%;">
+          <p>
+            Architectural Overview of the StyleT2V0 Method: This diagram illustrates the integration of the shared attention mechanism within the Text2Video-Zero framework to enhance style consistency across video sequences. The method employs Adaptive Instance Normalization (AdaIN) to adjust the query <span class="math">(Q<sub>i</sub>)</span> for each frame <span class="math">F<sub>i</sub></span> by blending style features from a designated reference image <span class="math">(Q<sub>r</sub>)</span>, ensuring stylistic uniformity and alignment with textual prompts. Keys <span class="math">(K)</span> and values <span class="math">(V)</span> are also adapted using AdaIN, aligning them with the style of the reference image while maintaining content continuity from the first frame <span class="math">(K<sub>1</sub> and V<sub>1</sub>)</span>. The resultant attention mechanism applies these style-consistent queries, keys, and values to produce a video sequence where each frame is coherent in both style and content.
+          </p>
         </div>
       </div>
     </section>
@@ -236,9 +239,147 @@
 
 <!-- End of Results -->
 
+<!-- Pose Control -->
+<section class="section" id="PoseControl">
+  <div class="container is-max-desktop content">
+    <h2 class="title">StyleT2V0 with Pose Guidance</h2>
+    <section class="hero method">
+    <div class="container is-max-desktop">
+    <div class="hero-body">
+    <table class="center">
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+        </td>
+        <td><img src="./static/images/pose/input/dance2_corr.gif"></td>
+        <td><img src="./static/images/pose/input/dance4_corr.gif"></td>
+      </tr>
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+          <img src="./static/images/styles/saryan.jpg" raw=true>
+        </td>
+        <td><img src="./static/images/pose/saryan/beer_dance.gif"></td>
+        <td><img src="./static/images/pose/saryan/panda_dance.gif"></td>
+      </tr>
+      <tr>
+        <td width=25% style="text-align:center;">"Martiros Saryan</td>
+        <td width=25% style="text-align:center;">"A bear dancing on the concrete"</td>
+        <td width=25% style="text-align:center;">"A panda dancing on the concrete"</td>
+      </tr>
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+          <img src="./static/images/styles/vangog_style.png" raw=true>
+        </td>
+        <td><img src="./static/images/pose/van_gogh/beer_dance.gif"></td>
+        <td><img src="./static/images/pose/van_gogh/panda_dance.gif"></td>
+      </tr>
+      <tr>
+        <td width=25% style="text-align:center;">"Van Gogh"</td>
+        <td width=25% style="text-align:center;">"A bear dancing on the concrete"</td>
+        <td width=25% style="text-align:center;">"A panda dancing on the concrete"</td>
+      </tr>
+            <tr><td></td><td></td><td></td></tr>
+    </table>
+    <br>
+  </div></div></section>
+  </div>
+</section>
+
+<!-- End of Pose Control -->
+
+<!-- Edge Control -->
+<section class="section" id="EdgeControl">
+  <div class="container is-max-desktop content">
+    <h2 class="title">StyleT2V0 with Edge Guidance</h2>
+    <section class="hero method">
+    <div class="container is-max-desktop">
+    <div class="hero-body">
+    <table class="center">
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+        </td>
+        <td><img src="./static/images/edge/input/butterfly.gif"></td>
+        <td><img src="./static/images/edge/input/deer.gif"></td>
+      </tr>
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+          <img src="./static/images/styles/saryan.jpg" raw=true>
+        </td>
+        <td><img src="./static/images/edge/saryan/butterfly.gif"></td>
+        <td><img src="./static/images/edge/saryan/deer.gif"></td>
+      </tr>
+      <tr>
+        <td width=25% style="text-align:center;">"Martiros Saryan</td>
+        <td width=25% style="text-align:center;">"A butterfly"</td>
+        <td width=25% style="text-align:center;">"A deer"</td>
+      </tr>
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+          <img src="./static/images/styles/vangog_style.png" raw=true>
+        </td>
+        <td><img src="./static/images/edge/van_gogh/butterfly.gif"></td>
+        <td><img src="./static/images/edge/van_gogh/deer.gif"></td>
+      </tr>
+      <tr>
+        <td width=25% style="text-align:center;">"Van Gogh"</td>
+        <td width=25% style="text-align:center;">"A butterfly"</td>
+        <td width=25% style="text-align:center;">"A deer"</td>
+      </tr>
+            <tr><td></td><td></td><td></td></tr>
+    </table>
+    <br>
+  </div></div></section>
+  </div>
+</section>
+
+<!-- End of Edge Control -->
 
 
+  <!-- Depth Control -->
+<section class="section" id="DepthControl">
+  <div class="container is-max-desktop content">
+    <h2 class="title">StyleT2V0 with Depth Guidance</h2>
+    <section class="hero method">
+    <div class="container is-max-desktop">
+    <div class="hero-body">
+    <table class="center">
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+        </td>
+        <td><img src="./static/images/depth/input/butterfly.gif"></td>
+        <td><img src="./static/images/depth/input/deer.gif"></td>
+      </tr>
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+          <img src="./static/images/styles/saryan.jpg" raw=true>
+        </td>
+        <td><img src="./static/images/depth/saryan/butterfly.gif"></td>
+        <td><img src="./static/images/depth/saryan/deer.gif"></td>
+      </tr>
+      <tr>
+        <td width=25% style="text-align:center;">"Martiros Saryan</td>
+        <td width=25% style="text-align:center;">"A butterfly"</td>
+        <td width=25% style="text-align:center;">"A deer"</td>
+      </tr>
+      <tr>
+        <td style="vertical-align: middle; text-align: center;">
+          <img src="./static/images/styles/vangog_style.png" raw=true>
+        </td>
+        <td><img src="./static/images/depth/van_gogh/butterfly.gif"></td>
+        <td><img src="./static/images/depth/van_gogh/deer.gif"></td>
+      </tr>
+      <tr>
+        <td width=25% style="text-align:center;">"Van Gogh"</td>
+        <td width=25% style="text-align:center;">"A butterfly"</td>
+        <td width=25% style="text-align:center;">"A deer"</td>
+      </tr>
+            <tr><td></td><td></td><td></td></tr>
+    </table>
+    <br>
+  </div></div></section>
+  </div>
+</section>
 
+<!-- End of Depth Control -->
 
 <!-- Paper poster -->
 <section class="hero is-small is-light">
@@ -246,7 +387,7 @@
     <div class="container">
       <h2 class="title">Poster</h2>
 
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+      <iframe  src="static/pdfs/YSU_ASDS_2024__MS_Thesis___Video_Generation.pdf" width="100%" height="550">
           </iframe>
         
       </div>
